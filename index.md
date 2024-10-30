@@ -311,7 +311,7 @@ Sample 1 proved to be the better sample as expected. This sample included the mo
 
 [Back to top](#Index)
 
-<a class="anchor" id="Verifiy-Model-Against-Test-Data"></a>
+<a class="anchor" id="Verify-Model-Against-Test-Data"></a>
 ### 3.4 Verify Model Against Test Data
 
 ```python
