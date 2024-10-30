@@ -1,23 +1,25 @@
+<a class="anchor" id="Index"></a>
 # Index
 
 - [Abstract](#Abstract)
-- [1. Introduction](#1.-Introduction)
-- [2. The Data](#2.-The-Data)
-    - [2.1 Import the Data](#2.1-Import-the-Data)
-    - [2.2 Data Exploration](#2.2-Data-Exploration)
-    - [2.3 Data Preparation](#2.3-Data-Preparation)
-    - [2.4 Correlation](#2.4-Correlation)
-- [3. Project Description](#3.-Project-Description)
-    - [3.1 Linear Regression](#3.1-Linear-Regression)
-    - [3.2 Analysis](#3.2-Analysis)
-    - [3.3 Results](#3.3-Results)
-    - [3.4 Verify Your Model Against Test Data](#3.4-Verify-Your-Model-Against-Test-Data)
+- [1. Introduction](#Introduction)
+- [2. The Data](#The-Data)
+    - [2.1 Importing the Data](#Import-the-Data)
+    - [2.2 Data Exploration](#Data-Exploration)
+    - [2.3 Data Preparation](#Data-Preparation)
+    - [2.4 Correlation](#Correlation)
+- [3. Project Description](#Project-Description)
+    - [3.1 Linear Regression](#Linear-Regression)
+    - [3.2 Analysis](#Analysis)
+    - [3.3 Results](#Results)
+    - [3.4 Verify Model Against Test Data](#Verify-Model-Against-Test-Data)
 - [Conclusion](#Conclusion)
 - [References](#References)
 
 
 [Back to top](#Index)
 
+<a class="anchor" id="Abstract"></a>
 ##  Abstract
 
 In this project, I developed a housing sale price prediction model using linear regression, focusing on feature selection and correlation analysis to identify the most impactful variables. After cleaning the dataset, we used features with strong positive and negative correlations (above 0.4 or below -0.4) to predict housing prices. Missing values were handled by imputing the mean, and the selected features were used to train the linear regression model. The model's performance was evaluated using the R^2 score, which measures how well the model explains the variance in housing prices. Residual analysis, through histograms of prediction errors, showed a reasonably symmetric distribution, indicating accurate predictions with low bias. This model provides a simple yet effective approach to predicting housing prices, offering insights into key drivers of value and laying the groundwork for future improvements and applications in real estate analysis.
@@ -25,7 +27,7 @@ In this project, I developed a housing sale price prediction model using linear 
 
 [Back to top](#Index)
 
-
+<a class="anchor" id="Introduction"></a>
 ## 1. Introduction
 
 The objective of this project is to build a prediction model for housing sale prices using linear regression, a common statistical method for understanding relationships between variables. The main goal is to use historical data of house features and prices to predict future sale prices based on key attributes.
@@ -41,11 +43,13 @@ Finally, we evaluated the model’s performance and tested it against a new set 
 
 [Back to top](#Index)
 
+<a class="anchor" id="The-Data"></a>
 ## 2. The Data
 
 [Back to top](#Index)
 
-### 2.1 Import the Data
+<a class="anchor" id="Import-the-Data"></a>
+### 2.1 Importing the Data
 
 ```python
 import pandas as pd
@@ -77,6 +81,7 @@ data = pd.read_csv('houseSmallData.csv')
 
 [Back to top](#Index)
 
+<a class="anchor" id="Data-Exploration"></a>
 ### 2.2 Data Exploration
 
 For me, the top features that have the most impact on house prices are:
@@ -156,6 +161,7 @@ plt.scatter(copy['WoodDeckSF'], y = target)
 
 [Back to top](#Index)
 
+<a class="anchor" id="Data-Preparation"></a>
 ### 2.3 Data Preparation
 
 #### Search for Null values
@@ -173,6 +179,7 @@ numeric = copy.select_dtypes(include = [np.number]).interpolate().dropna(axis=1)
 
 [Back to top](#Index)
 
+<a class="anchor" id="Correlation"></a>
 ### 2.4 Correlation
 
 In my data, we are looking for all relevant data that can correlate to the sale price. I will not take into account strings and NaN values.  The correlation will help me make an educated guess for my housing price by indicating me how the independent variables behave with the dependent variable. We will be taking variables that have a positive and negative correlation to the sale price; it is good to know what factors increase with the sale price and which ones increase as the sale price decreases.
@@ -194,6 +201,7 @@ I noticed that most of the variables I chose and analyzed for data exploration a
 
 [Back to top](#Index)
 
+<a class="anchor" id="Project-Description"></a>
 ## 3. Project Description
 
 In my analysis, I included more variables to correlate than Dr. Williams to get a better prediction for the housing prices. However, the variables that I added have a correlation of 0.4 or more, or 0.4 or less with respect to the sale price. I did not want to fall into making a model that only worked with the data it was trained on, but that is also capable of adapting to new data. 
@@ -203,6 +211,7 @@ I noticed that variables related to the area of different parts of the house are
 
 [Back to top](#Index)
 
+<a class="anchor" id="Linear-Regression"></a>
 ### 3.1 Linear Regression
 
 Linear Regression roots from linear statistics and is a machine learning algorithm that is used to predict values within a continuous range rather than classifying them into categories. The variables that you want to predict are the dependent variables. The predictions can be made using one or more independent variables. In this project, we use Multiple Linear Regressions. It is essentially an extension of Simple Linear Regression with multiple sets of data used to make the prediction. 
@@ -216,6 +225,7 @@ To implement Linear Regression into Python, we can import libraries such as 'num
 
 [Back to top](#Index)
 
+<a class="anchor" id="Analysis"></a>
 ### 3.2 Analysis 
 
 #### Sample 1: 
@@ -267,6 +277,7 @@ predictions = model.predict(x)
 
 [Back to top](#Index)
 
+<a class="anchor" id="Results"></a>
 ### 3.3 Results
 
 #### Sample 1 Results:
@@ -300,7 +311,8 @@ Sample 1 proved to be the better sample as expected. This sample included the mo
 
 [Back to top](#Index)
 
-### 3.4 Verify Your Model Against Test Data
+<a class="anchor" id="Verifiy-Model-Against-Test-Data"></a>
+### 3.4 Verify Model Against Test Data
 
 ```python
 test = pd.read_csv('jtest.csv') # Read new test data.
@@ -325,6 +337,7 @@ The results show to be in accordance with what I found earlier. The mean accurac
 
 [Back to top](#Index)
 
+<a class="anchor" id="Conclusion"></a>
 ## Conclusion
 
 1. Data Cleaning is Crucial: In developing a housing sale price prediction model, handling missing values was essential to ensure that the model could be trained without errors. Techniques like replacing missing values with column means (fillna(x.mean())) or removing irrelevant columns significantly improved data quality.
@@ -343,8 +356,9 @@ The results show to be in accordance with what I found earlier. The mean accurac
 
 
 
-[Back to top](#Index
-)
+[Back to top](#Index)
+
+<a class="anchor" id="References"></a>
 ## References
 
 - Kiernan, Diane. “Chapter 7: Correlation and Simple Linear Regression.” MILNELibrary. Natural Resources Biometrics, 2014. https://milnepublishing.geneseo.edu/natural-resources-biometrics/chapter/chapter-7-correlation-and-simple-linear-regression/ .
