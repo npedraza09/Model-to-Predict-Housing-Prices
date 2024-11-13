@@ -19,8 +19,6 @@
 - [References](#References)
 
 
-[Back to top](#Index)
-
 <a class="anchor" id="Abstract"></a>
 ##  Abstract
 
