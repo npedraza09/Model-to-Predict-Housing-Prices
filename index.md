@@ -364,3 +364,9 @@ The results show to be in accordance with what I found earlier. The mean accurac
 - Kiernan, Diane. “Chapter 7: Correlation and Simple Linear Regression.” MILNELibrary. Natural Resources Biometrics, 2014. https://milnepublishing.geneseo.edu/natural-resources-biometrics/chapter/chapter-7-correlation-and-simple-linear-regression/ .
 
 - Kiernan, Diane. “Chapter 8: Multiple Linear Regression.” MILNELibrary. Natural Resources Biometrics, 2014. https://milnepublishing.geneseo.edu/natural-resources-biometrics/chapter/chapter-8-multiple-linear-regression/ .
+- 
+
+### Tools:
+* Python
+* Libraries: Pandas, Numpy, Matplotlib.pyplot, Scipy.stats, and Sklearn
+* Jupyter Notebook
