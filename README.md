@@ -1,2 +1,5 @@
 # 🏠 Model to Predict Housing Prices
 
+In this project, I developed a housing sale price prediction model using linear regression, focusing on feature selection and correlation analysis to identify the most impactful variables. After cleaning the dataset, we used features with strong positive and negative correlations (above 0.4 or below -0.4) to predict housing prices. Missing values were handled by imputing the mean, and the selected features were used to train the linear regression model. The model's performance was evaluated using the R^2 score, which measures how well the model explains the variance in housing prices. Residual analysis, through histograms of prediction errors, showed a reasonably symmetric distribution, indicating accurate predictions with low bias. This model provides a simple yet effective approach to predicting housing prices, offering insights into key drivers of value and laying the groundwork for future improvements and applications in real estate analysis.
+
+Check the index.md file to see the full project. Enjoy!
